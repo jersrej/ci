@@ -1,6 +1,13 @@
 <html>
 <head>
 <script src="<?=JS?>jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('.submit_button').click(function(e){
+		alert('heay');
+	});
+})
+</script>
 </head>
 <body>
 	<p>Sku pull</p>
