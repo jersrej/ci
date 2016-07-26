@@ -27,7 +27,7 @@ class Pull extends CI_Controller {
 		$json = file_get_contents($url);
 		$json_data = json_decode($json, JSON_PRETTY_PRINT);
 		var_dump($json_data);
-		//echo "My token: ". $json_data["access_token"];
+		echo "My token: ". $json_data["metadata"];
 		
 		//$f = file_get_contents($url);
 		//var_dump($f); 
