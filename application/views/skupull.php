@@ -1,5 +1,7 @@
 <html>
-<head></head>
+<head>
+<script src="<?=JS?>jquery-3.1.0.min.js"></script>
+</head>
 <body>
 	<p>Sku pull</p>
 	<?php

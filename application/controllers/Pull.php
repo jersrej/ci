@@ -11,11 +11,16 @@ class Pull extends CI_Controller {
 	}
 	
 	public function index(){
-		//$this->load->helper('form');
-		$this->load->view('skupull');
+		//$this->load->view('skupull');
 	}	
 
 	public function validation(){
 		$this->_success();
-	}	
+	}
+	
+	public function _success(){
+		$data_row_sku = $this->input->post('text_skus');
+		
+		echo $data_row_sku;
+	}
 }
