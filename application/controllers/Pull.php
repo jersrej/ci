@@ -9,4 +9,8 @@ class Pull extends CI_Controller {
 		$this->load->library('form_validation');
 		//$this->load->library('email');
 	}
+	
+	public function index(){
+		$this->load->view('skupull');
+	}	
 }
