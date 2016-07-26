@@ -14,4 +14,8 @@ class Pull extends CI_Controller {
 		//$this->load->helper('form');
 		$this->load->view('skupull');
 	}	
+
+	public function validation(){
+		$this->_success();
+	}	
 }
