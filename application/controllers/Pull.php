@@ -24,7 +24,8 @@ class Pull extends CI_Controller {
 		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=SA334HBAK1Y1ANPH-611359';
 		$json = file_get_contents($url);
 		$json_data = json_decode($json, true);
-		echo "My token: ". $json_data["access_token"];
+		var_dump($json_data);
+		//echo "My token: ". $json_data["access_token"];
 		
 		//$f = file_get_contents($url);
 		//var_dump($f); 
