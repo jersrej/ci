@@ -19,8 +19,8 @@ class Pull extends CI_Controller {
 	}
 	
 	public function _success(){
-		$data_row_sku = $this->input->post('text_skus');
+		$data_row_sku = $this->input->get('skus');
 		
-		echo $data_row_sku;
+		return $data_row_sku;
 	}
 }
