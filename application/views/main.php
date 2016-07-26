@@ -2,6 +2,6 @@
 <head>
 </head>
 <body>
-	jers sample CI controller view
+	jers sample CI controller view 101
 </body>
 </html>
