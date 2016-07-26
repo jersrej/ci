@@ -21,7 +21,7 @@ class Pull extends CI_Controller {
 	public function _success(){
 		$data_row_sku = $this->input->get('skus');
 
-		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=SA334HBAK1Y1ANPH-611359';
+		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=' . $data_row_sku;
 		$json = file_get_contents($url);
 		$json_data = json_decode($json, true);
 		var_dump($json_data);
