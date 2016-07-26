@@ -20,9 +20,14 @@ class Pull extends CI_Controller {
 	
 	public function _success(){
 		$data_row_sku = $this->input->get('skus');
+
+		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=' & $data_row_sku;
+		$json = file_get_contents($url);
+		$json_data = json_decode($json, true);
+		echo "My token: ". $json_data["access_token"];
 		
-		$f = file_get_contents('https://www.lazada.com.ph/mobapi/all-products/?q=' & $data_row_sku);
-		var_dump($f); 
+		//$f = file_get_contents($url);
+		//var_dump($f); 
 		
 		echo $data_row_sku;
 		
