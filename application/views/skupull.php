@@ -3,7 +3,7 @@
 <script src="<?=JS?>jquery-3.1.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	var text_skus = $(.text_skus).val();
+	var text_skus = $('.text_skus').val();
 	$('.submit_button').click(function(e){
 		$.call_skus(text_skus);
 	});
