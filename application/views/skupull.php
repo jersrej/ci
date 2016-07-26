@@ -5,6 +5,7 @@
 $(document).ready(function(){
 	var text_skus = $('.text_skus').val();
 	$('.submit_button').click(function(e){
+		console.log(text_skus);
 		$.call_skus(text_skus);
 	});
 	
