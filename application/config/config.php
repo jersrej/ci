@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = '';
-$config['base_url']	= 'https://invulnerable-bastille-69785.herokuapp.com/ci/';
+$config['base_url']	= 'https://invulnerable-bastille-69785.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
