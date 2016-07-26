@@ -10,7 +10,7 @@ $(document).ready(function(){
 	
 	$.call_skus = function(skus){
 		$.ajax({ 
-            url: <?php echo site_url(pull/validation); ?>
+            url: '<?php echo site_url(); ?> pull/validation',
             data: { skus: skus },
             success: function($data, textStatus, jqXHR) {
 				console.log($data);
