@@ -19,30 +19,37 @@ class Pull extends CI_Controller {
 	}
 	
 	public function _success(){
+		//$sku  = array();
+		//$name = array();
+		//$url  = array();
+		
 		$data_row_sku = $this->input->get('skus');
+		$exp = explode(',', $data_row_sku);
+		
+		foreach ($exp as $skus){
+			//echo $a;
+			$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=' . $skus;
+			$json = file_get_contents($url);
+			$json_data = json_decode($json);
 
-		//header('Content-type: application/json');
-		
-		echo "4";
-		
-		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=' . $data_row_sku;
-		$json = file_get_contents($url);
-		$json_data = json_decode($json, TRUE);
-		//$json_data = json_decode(json_encode($json), TRUE);
-		//var_dump($json_data);
-		//echo "My token: ". $json_data->{'metadata'};
-		
-		foreach ($json_data as $v) {
-			echo $v['metadata'];
-			//echo $v->'metadata';
+			if ($json_data->success){
+				foreach ($json_data->metadata->results as $a) {	
+					$results_html[]  = array(
+						'output' => 
+							"<li>
+								<p>".$a->data->sku."</p>
+								<p>".$a->data->name."</p>
+								<p>".$a->data->url."</p>
+							</li>"
+							//"<li>".$a->data->name."</li>"
+							//"<li>".$a->data->url."</li>"
+					);
+				}
+			}
+			//echo $sku. " " .$name. " " .$url;
+			//echo "<br />";
 		}
-
-		
-		//$f = file_get_contents($url);
-		//var_dump($f); 
-		echo "<br />";
-		echo $data_row_sku;
-		
-		return $data_row_sku;
+		echo $_GET['callback']. '(' . json_encode($results_html) . ');';
+		//return $sku[];
 	}
 }
