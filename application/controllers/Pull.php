@@ -23,19 +23,19 @@ class Pull extends CI_Controller {
 
 		//header('Content-type: application/json');
 		
-		echo "2";
+		echo "3";
 		
 		$url = 'https://www.lazada.com.ph/mobapi/all-products/?q=' . $data_row_sku;
 		$json = file_get_contents($url);
 		//json_decode(json_encode($array), FALSE);
 		$json_data = json_decode(json_encode($json), JSON_PRETTY_PRINT);
-		//var_dump($json_data);
+		var_dump($json_data);
 		//echo "My token: ". $json_data->{'metadata'};
 		
-		foreach ($json_data as $v) {
-			echo $v['metadata'];
+		//foreach ($json_data as $v) {
+			//echo $v['metadata'];
 			//echo $v->'metadata';
-		}
+		//}
 
 		
 		//$f = file_get_contents($url);
